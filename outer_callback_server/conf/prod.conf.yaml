@@ -1,0 +1,65 @@
+app:
+  name: "outer_callback_server"   #应用名称
+  port: 8033    #服务器端口号
+xlog:
+  fileConfig:
+    logFilePath: "./log/" #文件输出路径
+    maxSize: 1024  #文件最大尺寸,以MB为单位，超过即创建第二个文件
+    maxBackups: 2  #最大备份文件数
+    maxAge: 7  #保存时间
+    compress: true #是否压缩
+    console: true #是否是需要控制台输出
+    levelString: debug #日志输出等级，debug,info,warn,error,panic,fatal
+bizlog:
+  fileConfig:
+    logFilePath: "/data/server/xngo/xng_server/statistic/"
+    maxSize: 1024
+    maxBackups: 2
+    maxAge: 7
+    compress: true #是否压缩
+    console: true #是否是需要控制台输出
+    levelString: info #日志输出等级，debug,info,warn,error,panic,fatal
+addrs:
+  ids: "ids.srv.ns"
+  usercenter: "xuser_center.srv.ns"
+mongo:
+  user:
+    dsn: "mongodb://120.25.66.46:27077?minPoolSize=10&maxIdleTimeMS=10000"
+  wx:
+    dsn: "mongodb://120.25.66.46:27077?minPoolSize=10&maxIdleTimeMS=10000"
+redis:
+  weixin:
+    addr: "120.25.66.46:8379"
+    auth: ""
+    db: 2
+mq:
+  default:
+    nameSrvAddr: 120.25.66.46:7002
+    threadCount: 100
+wxids:
+  xngservice: "gh_9af195dc3497"
+  xngsubscribe: "gh_fd15bc49d378"
+  xngminiapp: "gh_0cc116cbc404"
+  xngapp: ""
+  xbdservice: ""
+  xbdsubscribe: ""
+  xbdminiapp: ""
+  tiaservice: ""
+  gameidiomminiapp: ""
+
+wxtoken:
+  xngservice: "xiaoniangao20141118"
+  xngsubscribe: "xiaoniangao20141118"
+  xngminiapp: "xng93983@23jq&yh2015"
+  xngapp: ""
+  xbdservice: ""
+  xbdsubscribe: ""
+  xbdminiapp: ""
+  tiaservice: ""
+  gameidiomminiapp: ""
+phpReceiveAddr:
+  xngservice: "https://api.xiaoniangao.cn/wxreceive/add"
+  xngminiapp: "https://api.xiaoniangao.cn/wxmini/add"
+  xngsubscribe: "https://api.xiaoniangao.cn/wxreceive/subscription_add"
+grayMsgTypes: "text"
+grayOpenids: "all"

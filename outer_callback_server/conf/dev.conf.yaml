@@ -1,0 +1,93 @@
+app:
+  name: "outer_callback_server"   #应用名称
+  port: 8033    #服务器端口号
+xlog:
+  fileConfig:
+    logFilePath: "./log/" #文件输出路径
+    maxSize: 1024  #文件最大尺寸,以MB为单位，超过即创建第二个文件
+    maxBackups: 2  #最大备份文件数
+    maxAge: 7  #保存时间
+    compress: true #是否压缩
+    console: true #是否是需要控制台输出
+    levelString: debug #日志输出等级，debug,info,warn,error,panic,fatal
+bizlog:
+  fileConfig:
+    logFilePath: "/data/server/xngo/xng_server/statistic/"
+    maxSize: 1024
+    maxBackups: 2
+    maxAge: 7
+    compress: true #是否压缩
+    console: true #是否是需要控制台输出
+    levelString: info #日志输出等级，debug,info,warn,error,panic,fatal
+addrs:
+  ids: ""
+  usercenter: ""
+mongo:
+  xng_user_0:
+    dsn: ""
+  xng_user_1:
+    dsn: ""
+  xng_user_2:
+    dsn: ""
+  xng_user_3:
+    dsn: ""
+  wx:
+    dsn: ""
+redis:
+  weixin:
+    addr: ""
+    auth: ""
+    db: 2
+mq:
+  default:
+    nameSrvAddr:
+    threadCount:
+go_mq:
+  nameServers:
+    - ""
+mqlog:
+  fileConfig:
+    logFilePath: "./log/mq_"
+    maxSize: 1024
+    maxBackups: 5
+    maxAge: 7
+    compress: true
+    console: false
+    levelString: info
+wxids:
+  xngservice: ""
+  xngsubscribe: ""
+  xngminiapp: ""
+  xngapp: ""
+  xbdservice: ""
+  xbdsubscribe: ""
+  xbdminiapp: ""
+  tiaservice: ""
+  gameidiomminiapp: ""
+
+wxtoken:
+  xngservice: ""
+  xngsubscribe: ""
+  xngminiapp: ""
+  xngapp: ""
+  xbdservice: ""
+  xbdsubscribe: ""
+  xbdminiapp: ""
+  tiaservice: ""
+  gameidiomminiapp: ""
+phpReceiveAddr:
+  xngservice: ""
+  xngminiapp: ""
+  xngsubscribe: ""
+mpGrayMsgTypes:
+  - text
+mpGrayOpenids:
+  - all
+maGrayMsgTypes:
+  - text
+maGrayOpenids:
+  - all
+subGrayMsgTypes:
+  - text
+subGrayOpenids:
+  - all
