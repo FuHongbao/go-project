@@ -1,0 +1,159 @@
+app:
+  name: "resources-center"   #应用名称
+  port: 8987    #服务器端口号
+
+xlog:
+  fileConfig:
+    logFilePath: "./log/" #文件输出路径
+    maxSize: 1024  #文件最大尺寸,以MB为单位，超过即创建第二个文件
+    maxBackups: 2  #最大备份文件数
+    maxAge: 7  #保存时间
+    console: true #是否是需要控制台输出
+    levelString: debug #日志输出等级，debug,info,warn,error,panic,fatal
+    appId: "resources-center"
+logger:
+  fileConfig:
+    logFilePath: bootstrap
+    maxSize: 64
+    maxBackups: 3
+    maxAge: 1
+    console: true
+    compress: true
+    levelString: debug         #debug,info,warn,error,panic,fatal
+traceLog:
+  fileConfig:
+    logFilePath: trace/trace
+    maxSize: 64
+    maxBackups: 3
+    maxAge: 1
+    compress: true
+    console: true
+    levelString: debug         #debug,info,warn,error,panic,fatal
+
+addrs:
+  ids: ""
+
+
+bucket:
+  album:  ""
+  resource: ""
+
+redis:
+  account_redis:
+    addr: ""
+    auth: ""
+    db: 5
+    poolSize: 100
+    dialTimeout: 10000   # ms
+    readTimeout: 1000   # ms
+    writeTimeout: 1000  # ms
+  album:
+    addr: ""
+    auth: ""
+    db: 0
+    poolSize: 100
+    dialTimeout: 10000   # ms
+    readTimeout: 1000    # ms
+    writeTimeout: 1000   # ms
+  resources:
+    addr: ""
+    auth: ""
+    db: 0
+    poolSize: 100
+    dialTimeout: 10000   # ms
+    readTimeout: 1000    # ms
+    writeTimeout: 1000   # ms
+  sts:
+    addr: ""
+    auth: ""
+    db: 15
+    poolSize: 100
+    dialTimeout: 10000   # ms
+    readTimeout: 1000    # ms
+    writeTimeout: 1000   # ms
+
+mq:
+  nameServers:
+    - ""
+speech:
+  app_key: ""
+  access_key_id: ""
+  access_key_secret: ""
+  domain: ""
+  region: ""
+  url: ""
+  host: ""
+mongo:
+  xng_qiniu_0:
+    dsn: ""
+  xng_qiniu_1:
+    dsn: ""
+  xng_qiniu_2:
+    dsn: ""
+  xng_qiniu_3:
+    dsn: ""
+  xng_ids:
+    dsn: ""
+  xng_user_img_0:
+    dsn: ""
+  xng_user_img_1:
+    dsn: ""
+  xng_user_img_2:
+    dsn: ""
+  xng_user_img_3:
+    dsn: ""
+
+sts:
+  common_upload_user:     #用户上传资源使用的sts
+    access_key_id: ""
+    access_key_secret: ""
+    role_arn: ""
+    token_expire_time: 3600
+    bucket: ""
+    endpoint: ""
+    endpoint_internal: ""
+    session_name: ""
+    req_host: ""
+  common_upload_mts:      #后端使用处理常规资源
+    access_key_id: ""
+    access_key_secret: ""
+    role_arn: ""
+    token_expire_time: 3600
+    bucket: ""
+    endpoint: ""
+    endpoint_internal: ""
+    session_name: ""
+    req_host: ""
+internal:
+  resource_ali: ""
+  album_ali: ""
+  live_ali: ""
+  audit_music_ali: ""
+ali_oss:
+  video:
+    endpoint: ""
+    bucket: ""
+    access_key_id: ""
+    access_key_secret: ""
+  img:
+    endpoint: ""
+    bucket: ""
+    access_key_id: ""
+    access_key_secret: ""
+  album:
+    endpoint: ""
+    bucket: ""
+    access_key_id: ""
+    access_key_secret: ""
+  audit_music:
+    endpoint: ""
+    bucket: ""
+    access_key_id: ""
+    access_key_secret: ""
+cdn:
+  img_ali: ""
+  album_ali: ""
+  album_tengxun: ""
+  audit_music: ""
+  static_ali: ""
+callback_url: ""
