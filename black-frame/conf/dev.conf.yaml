@@ -1,0 +1,35 @@
+app:
+  name: "black-frame"   #应用名称
+  port: 8991    #服务器端口号
+xlog:
+  fileConfig:
+    logFilePath: "./log/" #文件输出路径
+    maxSize: 1024  #文件最大尺寸,以MB为单位，超过即创建第二个文件
+    maxBackups: 2  #最大备份文件数
+    maxAge: 7  #保存时间
+    console: true #是否是需要控制台输出
+    levelString: debug #日志输出等级，debug,info,warn,error,panic,fatal
+addrs:
+  clog: "clog.srv.ns"   #clog的名字服务地址
+  ids: "192.168.11.32:8369"
+mongo:
+  xng_qiniu_0:
+    dsn: "mongodb://192.168.11.2:27077"
+  xng_qiniu_1:
+    dsn: "mongodb://192.168.11.2:27077"
+  xng_qiniu_2:
+    dsn: "mongodb://192.168.11.2:27077"
+  xng_qiniu_3:
+    dsn: "mongodb://192.168.11.2:27077"
+redis:
+  resources:
+    addr: "192.168.11.3:6379"
+    auth: "ec8bcbe193bba9e9"
+    db: 0
+    poolSize: 100
+    dialTimeout: 10000   # ms
+    readTimeout: 1000    # ms
+    writeTimeout: 1000   # ms
+mq:
+  nameServers:
+    - "192.168.11.8:9876"

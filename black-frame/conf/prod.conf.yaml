@@ -1,0 +1,27 @@
+app:
+  name: "skel_gin"  #应用名称
+  port: 8088  #服务器端口号
+xlog:
+  logFilePath: "./skel_gin" #文件输出路径
+  maxSize: 1024 #文件最大尺寸,以MB为单位，超过即创建第二个文件
+  maxBackups: 2 #最大备份文件数
+  maxAge: 7  #保存时间
+  compress: true #是否压缩
+  console: false #是否是需要控制台输出
+  level: 2 #日志输出等级，DEBUG:-1 INFO:0 WARN:1 ERROR:2 DPanic:3 Panic:4
+addrs:
+  clog: "clog.srv.ns"  #clog的名字服务地址
+redis:
+  skel:
+    addr: "127.0.0.1:6379"
+    auth: ""
+    db: 1
+  body:
+    addr: "127.0.0.1:6379"
+    auth: ""
+    db: 1
+mongo:
+  skel:
+    dsn: "mongodb://120.25.66.46:27077?minPoolSize=10&maxIdleTimeMS=10000"
+  body:
+    dsn: "mongodb://120.25.66.46:27077?minPoolSize=10&maxIdleTimeMS=10000"

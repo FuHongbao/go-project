@@ -1,0 +1,21 @@
+stages:
+- sonarqube
+- send_result
+sonarqube:
+  stage: sonarqube
+  allow_failure: true
+  script:
+  - code_version=$(date "+%Y%m%d")
+  - sonar-scanner -Dsonar.projectVersion=$code_version
+  - go test ./... -coverprofile ../testCoverage.data -v -cover
+  - sonar-scanner -Dsonar.projectVersion=$code_version
+  tags:
+  - resources_center
+send_result:
+  stage: send_result
+  allow_failure: true
+  script:
+  - curl 'http://testcenter-be.xiaoniangao.cn/apis/getCodeScanResult' -H 'Content-Type:application/json'
+    -d '{"sonar_project_key":"resources_center","robot_url":""}'
+  tags:
+  - resources_center
